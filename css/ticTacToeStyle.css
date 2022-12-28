@@ -1,33 +1,37 @@
-*, *::after, *::before {
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Calibri", sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: sans-serif;
+  background-color: rgb(227, 226, 214);
 }
 
 .board {
-    width: 100vw;
-    height: 90vh;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(3, auto);
+  width: 100vw;
+  height: 70vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    font-size: 80px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
+  width: 100px;
+  height: 100px;
+  font-size: 80px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
 }
 
 .cell:first-child,
@@ -50,48 +54,63 @@ body {
   border-bottom: none;
 }
 
-.cell.x,
-.cell.o {
+.cell.X,
+.cell.O {
   cursor: not-allowed;
 }
 
+.X {
+  background-color: rgb(188, 31, 31);
+}
+
+.O {
+  background-color: rgb(34, 179, 34);
+}
+
+.buttons {
+  width: fit-content;
+  margin: auto;
+}
+
 .announce {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .9);
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 5rem;
-    flex-direction: column;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
 }
-  
-.announce button {
-    font-size: 3rem;
-    background-color: white;
-    border: 1px solid black;
-    padding: .25em .5em;
-    cursor: pointer;
-    margin-top: 15px;
+
+button {
+  font-size: 3rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 5px;
 }
-  
-.announce button:hover {
-    background-color: black;
-    color: white;
-    border-color: white;
+
+button:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
-  
-  .announce.show {
-    display: flex;
+
+.announce.show {
+  display: flex;
 }
 
 .display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  margin-top: 10px;
 }
