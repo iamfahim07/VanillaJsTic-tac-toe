@@ -29,14 +29,18 @@ change.addEventListener("click", changeFunc);
 function changeFunc() {
   swapTurn();
   displayContent();
+  swapSymbol();
+}
+
+function swapSymbol() {
   change.innerHTML = circleTurn ? "Start with X" : "Start with O";
 
-  if (change.classList.contains(classO)) {
-    change.classList.remove(classO);
-    change.classList.add(classX);
-  } else {
+  if (change.innerHTML === "Start with O") {
     change.classList.remove(classX);
     change.classList.add(classO);
+  } else {
+    change.classList.remove(classO);
+    change.classList.add(classX);
   }
 }
 
@@ -52,6 +56,7 @@ function startGame() {
   announce.classList.remove("show");
   displayContent();
   change.style.display = "inline";
+  swapSymbol();
 }
 
 function operation(e) {
